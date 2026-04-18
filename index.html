@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEN's Portfolio</title>
+    <meta name="description" content="Portfolio website for TEN">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <nav class="glass-nav">
+            <div class="logo">TEN</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="slide-up">Hi, I'm TEN</h1>
+                <p class="fade-in">A Creative Developer building modern web experiences.</p>
+                <a href="#projects" class="btn primary-btn fade-in delay">View My Work</a>
+            </div>
+            <div class="hero-visual glass-orb pulse"></div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about-section glass-panel reveal">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I am a passionate developer with a keen eye for design and a strong focus on creating engaging, modern user experiences. I love working with cutting-edge web technologies to bring ideas to life.</p>
+                <div class="skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Animations</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section glass-panel reveal">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img placeholder-img"></div>
+                    <h3>E-Commerce Platform</h3>
+                    <p>A modern shopping experience with smooth animations and intuitive design.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-img placeholder-img"></div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Data visualization platform featuring sleek, dark mode glassmorphism.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section glass-panel reveal">
+            <h2>Contact</h2>
+            <p>Let's work together on your next big project. Reach out to me anytime!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
