@@ -50,4 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
     });
+
+    // 4. Hatch Pets mini interaction
+    document.querySelectorAll('.pet-card').forEach(card => {
+        const button = card.querySelector('.hatch-btn');
+        const egg = card.querySelector('.egg');
+        const petName = card.dataset.pet;
+        const petEmoji = card.dataset.emoji;
+
+        button.addEventListener('click', () => {
+            card.classList.add('hatching');
+            button.disabled = true;
+            button.textContent = 'Hatching...';
+
+            window.setTimeout(() => {
+                card.classList.remove('hatching');
+                card.classList.add('hatched');
+                egg.textContent = petEmoji;
+                card.querySelector('h3').textContent = petName;
+                button.textContent = 'Hatched!';
+            }, 900);
+        }, { once: true });
+    });
+
 });
