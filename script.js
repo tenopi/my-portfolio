@@ -52,25 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Hatch Pets mini interaction
-    document.querySelectorAll('.pet-card').forEach(card => {
-        const button = card.querySelector('.hatch-btn');
-        const egg = card.querySelector('.egg');
-        const petName = card.dataset.pet;
-        const petEmoji = card.dataset.emoji;
+    const featuredPetCard = document.querySelector('.featured-pet-card');
+
+    if (featuredPetCard) {
+        const button = featuredPetCard.querySelector('.hatch-btn');
+        const status = featuredPetCard.querySelector('.pet-status');
 
         button.addEventListener('click', () => {
-            card.classList.add('hatching');
+            featuredPetCard.classList.add('hatching');
             button.disabled = true;
             button.textContent = 'Hatching...';
+            status.textContent = 'Cracks are glowing...';
 
             window.setTimeout(() => {
-                card.classList.remove('hatching');
-                card.classList.add('hatched');
-                egg.textContent = petEmoji;
-                card.querySelector('h3').textContent = petName;
+                featuredPetCard.classList.remove('hatching');
+                featuredPetCard.classList.add('hatched');
+                status.textContent = 'Hatched companion';
                 button.textContent = 'Hatched!';
-            }, 900);
+            }, 950);
         }, { once: true });
-    });
+    }
 
 });
