@@ -61,14 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             featuredPetCard.classList.add('hatching');
             button.disabled = true;
-            button.textContent = 'Hatching...';
-            status.textContent = 'Cracks are glowing...';
+            button.textContent = '孵化中...';
+            status.textContent = 'ひびが光りはじめました...';
 
             window.setTimeout(() => {
                 featuredPetCard.classList.remove('hatching');
                 featuredPetCard.classList.add('hatched');
-                status.textContent = 'Hatched companion';
-                button.textContent = 'Hatched!';
+                status.textContent = '相棒が孵化しました';
+                button.textContent = '孵化しました！';
             }, 950);
         }, { once: true });
     }
