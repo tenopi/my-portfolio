@@ -50,4 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
     });
+
+    // 4. Hatch Pets mini interaction
+    const featuredPetCard = document.querySelector('.featured-pet-card');
+
+    if (featuredPetCard) {
+        const button = featuredPetCard.querySelector('.hatch-btn');
+        const status = featuredPetCard.querySelector('.pet-status');
+
+        button.addEventListener('click', () => {
+            featuredPetCard.classList.add('hatching');
+            button.disabled = true;
+            button.textContent = '孵化中...';
+            status.textContent = 'ひびが光りはじめました...';
+
+            window.setTimeout(() => {
+                featuredPetCard.classList.remove('hatching');
+                featuredPetCard.classList.add('hatched');
+                status.textContent = '相棒が孵化しました';
+                button.textContent = '孵化しました！';
+            }, 950);
+        }, { once: true });
+    }
+
 });
